@@ -146,7 +146,8 @@ function showArmorList(armorList){
 
 }
 
-// showArmorsAndWeapons();
+//Descomentar
+showArmorsAndWeapons();
 
 
 
@@ -160,7 +161,8 @@ function showCharacters(){
     }
 }
 
-// showCharacters();
+//Descomentar
+showCharacters();
 
 //5. Seleccionar del total de armaduras de todos los personajes, aquellas que tienen
 //   un nivel menor a 30 y mostrar en pantalla su nombre y nivel 
@@ -181,7 +183,7 @@ function shChrsArmorsBelowLevel(belowLevel, armors){
     }
 }
 
-
+//Descomentar
 // shChrsArmorsBelowLevel(30, armors);
 
 
@@ -210,7 +212,8 @@ function printCharatersWeaponsNameAndLevel(){
 }
 
 addAvailableWeaponsToChrs();
-// printCharatersWeaponsNameAndLevel();
+//Descomentar
+printCharatersWeaponsNameAndLevel();
 
 
 // 7. Método fumble (en Character)
