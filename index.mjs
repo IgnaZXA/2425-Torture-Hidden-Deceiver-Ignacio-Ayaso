@@ -184,7 +184,7 @@ function shChrsArmorsBelowLevel(belowLevel, armors){
 }
 
 //Descomentar
-// shChrsArmorsBelowLevel(30, armors);
+shChrsArmorsBelowLevel(30, armors);
 
 
 // 6. Buscar, para cada personaje, todas la armas que pueda utilizar según nivel 
