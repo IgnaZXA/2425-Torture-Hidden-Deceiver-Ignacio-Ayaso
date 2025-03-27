@@ -8,4 +8,8 @@ export default class Armor{
         this.minLevel = minLevel;
         this.defense = defense;
     }
+
+    showArmor(){
+        console.log(this.name + ": Min Level = " + this.minLevel + ", Defense = " + this.defense);
+    }
 }

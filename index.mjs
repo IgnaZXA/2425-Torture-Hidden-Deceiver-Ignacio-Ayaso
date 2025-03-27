@@ -113,3 +113,39 @@ createArmors();
 createWeapons();
 createCharacters();
 
+// 3. Mostrar un listado de todas lar Weapon y Armors
+function showArmorsAndWeapons(){
+
+    //Mostrar por consola las Weapons
+    showWeaponList(weapons);
+
+    //Mostrar por consola las Armors
+    showArmorList(armors);
+
+}
+
+function showWeaponList(weaponList){
+    console.log("Weapon List" + "\n" + "-----------------");
+    for (let i = 0; i < weaponList.length; i++){
+        const actualWeapon = weaponList[i];
+        actualWeapon.showWeapon();
+
+    }
+    console.log();
+
+}
+
+function showArmorList(armorList){
+    console.log("Armor List" + "\n" + "-----------------");
+    for (let i = 0; i < armorList.length; i++){
+        const actualArmor = armorList[i];
+        actualArmor.showArmor();
+
+    }
+    console.log();
+
+}
+
+showArmorsAndWeapons();
+
+
