@@ -116,4 +116,53 @@ export default class Character{
         }
         return false;
     }
+
+
+    fumble(weapons, armors){
+        const rndWeapon = this.getRandomWeapon(weapons);
+
+        //Calcular el daño
+        let totalDamage = Math.ceil((rndWeapon.damage + this.level)/ 4);
+        console.log("total damage");
+        console.log(totalDamage);
+        //Restamos el daño total de la defensa de la armadura
+        for (let i = 0; i < this.inventory.length; i++){
+            const actInvObj = this.inventory[i];
+            if(this.isArmor(armors, actInvObj)){
+                actInvObj.denfense =  actInvObj.defense - totalDamage;
+            }
+        }
+        this.stamina -= 5;
+        rndWeapon.durability -= 2;
+
+
+    }
+
+    getRandomWeapon(weapons){
+        let weapon = null;
+        let i = 0;
+        let foundWeapon = false;
+
+        if (this.thereIsAnyWeaponInInventory(weapons)){ // Si 
+            while (!foundWeapon){
+                let randomIndx = Math.floor(Math.random() * this.inventory.length);
+                const randomObj = this.inventory[randomIndx];
+                if(this.isWeapon(weapons, randomObj)){
+                    foundWeapon = true;
+                    weapon = randomObj;
+                }
+            }
+        }
+        return weapon;
+    }
+
+    thereIsAnyWeaponInInventory(weapons){
+        for(let i = 0; i < this.inventory.length; i++){
+            const actualInvObject = this.inventory[i];
+            if(this.isWeapon(weapons, actualInvObject)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

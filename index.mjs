@@ -195,17 +195,31 @@ function addAvailableWeaponsToChrs(){
     for(let i = 0; i < characters.length; i++){
         const actChr = characters[i]; //    Actual character
         actChr.addAvaliableWeapons(weapons);
+    }
+}
 
+function printCharatersWeaponsNameAndLevel(){
+    for(let i = 0; i < characters.length; i++){
+        const actChr = characters[i]; //    Actual character
 
         //Imprimir en consola su nombre y todas la Weapon equipadas:
         console.log(actChr.name + ", level: " + actChr.level + "\n-----------------------------");
         actChr.printWeaponsNameAndLevel(weapons);
         console.log("--------------------------------");
-
-
-
     }
 }
 
 addAvailableWeaponsToChrs();
+// printCharatersWeaponsNameAndLevel();
 
+
+// 7. Método fumble (en Character)
+
+//8. Ejecutar el método fumble para uno de los personajes (a elección) y mostrar los datos 
+//   del personaje y equipamiento actualizado
+
+const selectedChar = characters[0];
+
+selectedChar.fumble(weapons, armors);
+
+selectedChar.show(weapons, armors);
