@@ -114,13 +114,13 @@ createWeapons();
 createCharacters();
 
 // 3. Mostrar un listado de todas lar Weapon y Armors
-function showArmorsAndWeapons(){
+function showArmorsAndWeapons(){ // los arrays son globales no hacen fasta se pasados como parámetros
 
     //Mostrar por consola las Weapons
-    showWeaponList(weapons);
+    showWeaponList(weapons); // tampoco haría falta pasar nada como parámetro
 
     //Mostrar por consola las Armors
-    showArmorList(armors);
+    showArmorList(armors); // aquí tampoco harían falta parámetros
 
 }
 
@@ -128,7 +128,7 @@ function showWeaponList(weaponList){
     console.log("Weapon List" + "\n" + "-----------------");
     for (let i = 0; i < weaponList.length; i++){
         const actualWeapon = weaponList[i];
-        actualWeapon.showWeapon();
+        actualWeapon.show();
 
     }
     console.log();
@@ -139,13 +139,25 @@ function showArmorList(armorList){
     console.log("Armor List" + "\n" + "-----------------");
     for (let i = 0; i < armorList.length; i++){
         const actualArmor = armorList[i];
-        actualArmor.showArmor();
+        actualArmor.show();
 
     }
     console.log();
 
 }
 
-showArmorsAndWeapons();
+// showArmorsAndWeapons();
 
 
+
+// 4. Mostrar todos los personajes con sus atributos y equipamiento.
+
+function showCharacters(){
+    console.log("CHARACTER LIST" + "\n-------------------------");
+    for(let i = 0; i < characters.length; i++){
+        const actualCharacter = characters[i];
+        actualCharacter.show(weapons, armors);
+    }
+}
+
+showCharacters();

@@ -9,7 +9,7 @@ export default class Weapon{
         this.durability = durability;
     }
 
-    showWeapon(){
+    show(){
         console.log(this.name + ": Min Level = " + this.minLevel + ", Damage = " + this.damage + ", Durability = " + this.durability);
     }
 }
