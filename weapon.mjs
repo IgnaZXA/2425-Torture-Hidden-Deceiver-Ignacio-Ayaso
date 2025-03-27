@@ -3,9 +3,9 @@
 export default class Weapon{
 
     constructor(name, minLevel, damage, durability){
-        this.name;
-        this.minLevel;
-        this.damage;
-        this.durability;
+        this.name = name;
+        this.minLevel = minLevel;
+        this.damage = damage;
+        this.durability = durability;
     }
 }
