@@ -117,15 +117,16 @@ createCharacters();
 function showArmorsAndWeapons(){ // los arrays son globales no hacen fasta se pasados como parámetros
 
     //Mostrar por consola las Weapons
+    console.log("Weapon List" + "\n" + "-----------------");
     showWeaponList(weapons); // tampoco haría falta pasar nada como parámetro
 
-    //Mostrar por consola las Armors
+    //Mostrar por consola las Armorsç
+    console.log("Armor List" + "\n" + "-----------------");
     showArmorList(armors); // aquí tampoco harían falta parámetros
 
 }
 
 function showWeaponList(weaponList){
-    console.log("Weapon List" + "\n" + "-----------------");
     for (let i = 0; i < weaponList.length; i++){
         const actualWeapon = weaponList[i];
         actualWeapon.show();
@@ -136,7 +137,6 @@ function showWeaponList(weaponList){
 }
 
 function showArmorList(armorList){
-    console.log("Armor List" + "\n" + "-----------------");
     for (let i = 0; i < armorList.length; i++){
         const actualArmor = armorList[i];
         actualArmor.show();
@@ -160,4 +160,30 @@ function showCharacters(){
     }
 }
 
-showCharacters();
+// showCharacters();
+
+//5. Seleccionar del total de armaduras de todos los personajes, aquellas que tienen
+//   un nivel menor a 30 y mostrar en pantalla su nombre y nivel 
+
+function shChrsArmorsBelowLevel(belowLevel, armors){
+    console.log("Armors below level " + belowLevel + ": ");
+
+    for (let i = 0; i < characters.length; i++){
+        const actCharacter = characters[i];
+        const chtArmorsBelowLevel = actCharacter.selectBelowLevelArmors(belowLevel, armors);
+        // console.log(chtArmorsBelowLevel);
+        if (chtArmorsBelowLevel.length > 0){
+            for (let j = 0; j < chtArmorsBelowLevel.length; j++){
+                console.log("Name: " + chtArmorsBelowLevel[j].name + ", MinLevel: "+ chtArmorsBelowLevel[j].minLevel)
+            }
+        }
+    
+    }
+}
+
+
+// console.log(armors);
+
+shChrsArmorsBelowLevel(30, armors);
+
+

@@ -26,7 +26,6 @@ export default class Character{
 
     }
 
-    /** */
     isWeapon(weaponList, invObject){
         for (let i = 0; i < weaponList.length; i++){
             if (invObject === weaponList[i]){
@@ -69,5 +68,20 @@ export default class Character{
                             "\nDefense: " + actualArmor.denfense);
             }
         }
+    }
+
+    selectBelowLevelArmors(minimumLevel, armorList){
+        const armorsBelow = [];
+
+        for (let i = 0; i < this.inventory.length; i++){
+            const actualInvObject = this.inventory[i];
+            if (this.isArmor(armorList, actualInvObject)){
+                if (actualInvObject.minLevel < minimumLevel){
+                    armorsBelow.push(actualInvObject);
+                }
+            }
+        }
+
+        return armorsBelow;
     }
 }
