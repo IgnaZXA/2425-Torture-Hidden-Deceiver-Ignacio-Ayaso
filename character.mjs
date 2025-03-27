@@ -52,7 +52,20 @@ export default class Character{
                 console.log("Name: " + actualWeapon.name + 
                             "\nMin Level: " + actualWeapon.minLevel + 
                             "\nDamage: " + actualWeapon.damage + 
-                            "\nDurability" + actualWeapon.durability);
+                            "\nDurability: " + actualWeapon.durability);
+                console.log(".....................................");
+            }
+        }
+    }
+
+    printWeaponsNameAndLevel(weaponList){
+        console.log("\nWeapons:" + "\n---------------------");
+        for(let i = 0; i < this.inventory.length; i++){
+            if (this.isWeapon(weaponList, this.inventory[i])){
+                const actualWeapon = this.inventory[i];
+                console.log("Name: " + actualWeapon.name + 
+                            "\nMin Level: " + actualWeapon.minLevel);
+                console.log(".....................................");
             }
         }
     }
@@ -83,5 +96,24 @@ export default class Character{
         }
 
         return armorsBelow;
+    }
+
+    addAvaliableWeapons(weapons){
+
+        for(let i = 0; i < weapons.length; i++){
+            const actWeapon = weapons[i];
+            if (this.level >= actWeapon.minLevel && !this.isInInventory(actWeapon)){
+                this.inventory.push(actWeapon);
+            }
+        }
+    }
+
+    isInInventory(invObject){
+        for(let i = 0; i < this.inventory.length; i++){
+            if (invObject === this.inventory[i]){
+                return true;
+            }
+        }
+        return false;
     }
 }

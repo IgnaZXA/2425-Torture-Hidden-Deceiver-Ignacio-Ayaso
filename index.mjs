@@ -182,8 +182,30 @@ function shChrsArmorsBelowLevel(belowLevel, armors){
 }
 
 
-// console.log(armors);
+// shChrsArmorsBelowLevel(30, armors);
 
-shChrsArmorsBelowLevel(30, armors);
 
+// 6. Buscar, para cada personaje, todas la armas que pueda utilizar según nivel 
+//    y añadirlas a su equipamiento. Mostrar en consola los nombres y nivel de cada
+//    personaje, junto con el nobre y nivel de cada arma que lleve
+
+
+function addAvailableWeaponsToChrs(){
+
+    for(let i = 0; i < characters.length; i++){
+        const actChr = characters[i]; //    Actual character
+        actChr.addAvaliableWeapons(weapons);
+
+
+        //Imprimir en consola su nombre y todas la Weapon equipadas:
+        console.log(actChr.name + ", level: " + actChr.level + "\n-----------------------------");
+        actChr.printWeaponsNameAndLevel(weapons);
+        console.log("--------------------------------");
+
+
+
+    }
+}
+
+addAvailableWeaponsToChrs();
 
